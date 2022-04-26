@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interfaces\EmailInterface;
+use App\Services\EmailService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(EmailInterface::class, EmailService::class);
     }
 }
