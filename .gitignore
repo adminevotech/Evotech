@@ -1,9 +1,12 @@
 /node_modules
 /public/hot
 /public/storage
+/public/docs
 /storage/*.key
 /vendor
+.scribe
 .env
+.env.testing
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
@@ -13,3 +16,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+.htaccess
