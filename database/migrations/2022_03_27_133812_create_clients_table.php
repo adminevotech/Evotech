@@ -15,7 +15,6 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_category_id')->references("id")->on('client_categories');
             $table->text('name');
             $table->boolean('active')->default(1);
             $table->softDeletesTz();
