@@ -4,5 +4,6 @@ namespace App\Constants;
 
 final class Media_Collections
 {
-    const SERVICES = 'services';
+    const SERVICE_PHOTO = 'service_photo';
+    const SERVICE_COVER = 'service_cover';
 }
