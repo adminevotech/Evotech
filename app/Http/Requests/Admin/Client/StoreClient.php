@@ -6,8 +6,8 @@ use App\Traits\ValidationTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * @bodyParam client_category_id integer required the id of client category record must exist client categories table. Example: 2
  * @bodyParam name object required the value of client name record Example: {"en": "English client name", "ar": "Arabic client name"}
+ * @bodyParam link string required the link of client record Example: https://www.google.com/
  * @bodyParam active boolean required the status of article category record
  * @bodyParam photo file required The image of the client. Maximum size is 5MB and allowed types are JPG, JPEG, PNG.
 */
@@ -32,8 +32,8 @@ class StoreClient extends FormRequest
     public function rules()
     {
         return [
-            "client_category_id" => "required|exists:client_categories,id",
             "name" => "required",
+            "link" => "required|url",
             'photo' => ["required", ...constant('valid_image')],
             "active" => ["required", "boolean"],
         ];

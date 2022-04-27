@@ -6,8 +6,8 @@ use App\Traits\ValidationTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * @bodyParam client_category_id integer the id of client category record must exist client categories table. Example: 2
  * @bodyParam name object the value of client name record Example: {"en": "English client name", "ar": "Arabic client name"}
+ * @bodyParam link string the link of client record Example: https://www.google.com/
  * @bodyParam active boolean the status of article category record
  * @bodyParam photo file The image of the client. Maximum size is 5MB and allowed types are JPG, JPEG, PNG.
 */
@@ -32,8 +32,8 @@ class UpdateClient extends FormRequest
     public function rules()
     {
         return [
-            "client_category_id" => "exists:client_categories,id",
             "name" => "array",
+            "link" => "nullable|url",
             'photo' => [...constant('valid_image')],
             "active" => ["boolean"],
         ];
