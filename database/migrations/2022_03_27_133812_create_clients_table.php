@@ -16,6 +16,7 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->text('name');
+            $table->string('link');
             $table->boolean('active')->default(1);
             $table->softDeletesTz();
             $table->timestamps();

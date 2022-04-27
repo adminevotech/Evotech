@@ -17,8 +17,8 @@ class ShowClientResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'client_category_id' => $this->client_category_id,
             'name' => $this->attributes('name')->data['name'],
+            'link' => $this->link,
             'photo' => $this->getFirstMediaUrl(Media_Collections::CLIENT),
             'active' => $this->active,
             'created_at' => $this->created_at,

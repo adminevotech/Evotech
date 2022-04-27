@@ -15,17 +15,11 @@ class Client extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, LogsActivity, InteractsWithMedia, HasTranslations;
 
-    protected $fillable = ['name', 'client_category_id'];
+    protected $fillable = ['name', 'link'];
     public $translatable = ['name'];
 
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection(Media_Collections::CLIENT)->singleFile();
     }
-
-   //reltaions
-   public function clientCategory()
-   {
-       return $this->belongsTo(ClientCategory::class);
-   }
 }
