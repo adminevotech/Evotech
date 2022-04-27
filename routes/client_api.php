@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Client\ClientController;
 use App\Http\Controllers\Api\Client\StaticContentController;
 use App\Http\Controllers\Api\Client\AuthController;
+use App\Http\Controllers\Api\Client\BlogController;
 use App\Http\Controllers\Api\Client\CommunicationController;
 use App\Http\Controllers\Api\Client\ServiceController;
 use App\Http\Controllers\Api\Client\SubscriptionController;
@@ -26,6 +27,7 @@ Route::group([
 
         Route::resource('services', ServiceController::class)->only('index', 'show');
         Route::resource('clients', ClientController::class)->only('index', 'show');
+        Route::resource('blogs', BlogController::class)->only('index', 'show');
 
         Route::middleware('auth:api')->group(function(){
             Route::middleware('OTP')->group(function(){

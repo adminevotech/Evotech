@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Admin\ActivityLogController;
 use App\Http\Controllers\Api\Admin\AuthController;
+use App\Http\Controllers\Api\Admin\BlogController;
 use App\Http\Controllers\Api\Admin\ClientController;
 use App\Http\Controllers\Api\Admin\PermissionController;
 use App\Http\Controllers\Api\Admin\StaticContentController;
@@ -34,6 +35,7 @@ Route::group([
                     "roles" => RoleController::class,
                     "services" => ServiceController::class,
                     "clients" => ClientController::class,
+                    "blogs" => BlogController::class,
                 ]);
             });
         });
