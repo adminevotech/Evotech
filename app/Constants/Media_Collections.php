@@ -8,6 +8,7 @@ final class Media_Collections
     const SERVICE_COVER = 'service_cover';
 
     const CLIENT = 'client';
+    const EMPLOYEE = 'employee';
 
     const BLOG_PHOTO = 'blog_photo';
     const BLOG_COVER = 'blog_cover';
