@@ -22,6 +22,8 @@ class RolesAndPermissionsSeeder extends Seeder
             'users',
             'roles',
             'services',
+            'clients',
+            'blogs',
             // ... // List all your Models you want to have Permissions for.
         ];
 
