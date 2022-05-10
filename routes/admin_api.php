@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Admin\AuthController;
 use App\Http\Controllers\Api\Admin\BlogController;
 use App\Http\Controllers\Api\Admin\ClientController;
 use App\Http\Controllers\Api\Admin\PermissionController;
+use App\Http\Controllers\Api\Admin\PortfolioController;
 use App\Http\Controllers\Api\Admin\StaticContentController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\Admin\RoleController;
@@ -36,6 +37,7 @@ Route::group([
                     "services" => ServiceController::class,
                     "clients" => ClientController::class,
                     "blogs" => BlogController::class,
+                    "portfolios" => PortfolioController::class,
                 ]);
             });
         });
