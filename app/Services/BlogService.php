@@ -10,7 +10,7 @@ class BlogService
     public function createBlog($request)
     {
         $blog = Blog::create($request->validated());
-        add_media_item($blog, $request->photo, Media_Collections::BLOG_COVER);
+        add_media_item($blog, $request->cover, Media_Collections::BLOG_COVER);
         add_media_item($blog, $request->photo, Media_Collections::BLOG_PHOTO);
 
     }
@@ -18,7 +18,7 @@ class BlogService
     public function updateBlog($request, $blog)
     {
         $blog->update($request->validated());
-        add_media_item($blog, $request->photo, Media_Collections::BLOG_COVER);
+        add_media_item($blog, $request->cover, Media_Collections::BLOG_COVER);
         add_media_item($blog, $request->photo, Media_Collections::BLOG_PHOTO);
     }
 }
