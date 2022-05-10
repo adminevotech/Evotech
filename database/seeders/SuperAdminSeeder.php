@@ -15,13 +15,14 @@ class SuperAdminSeeder extends Seeder
      */
     public function run()
     {
-        User::firstOrCreate([
+        $data = [
             'name' => 'Super Admin',
             'email' => env("SUPER_ADMIN_EMAIL"),
             'password' => env("SUPER_ADMIN_PASSWORD"),
             'type' => UserTypes::SUPER_ADMIN,
             'phone' => env("SUPER_ADMIN_PHONE"),
             'active' => true
-        ]);
+        ];
+        User::firstOrCreate($data,$data);
     }
 }
