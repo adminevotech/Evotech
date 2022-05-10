@@ -23,6 +23,6 @@ class SuperAdminSeeder extends Seeder
             'phone' => env("SUPER_ADMIN_PHONE"),
             'active' => true
         ];
-        User::firstOrCreate(['email', env("SUPER_ADMIN_EMAIL")], $data);
+        User::firstOrCreate(['email' => $data['email']], $data);
     }
 }
