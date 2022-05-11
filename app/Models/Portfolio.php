@@ -9,17 +9,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Translatable\HasTranslations;
 
-class Client extends Model implements HasMedia
+class Portfolio extends Model implements HasMedia
 {
-    use HasFactory, SoftDeletes, LogsActivity, InteractsWithMedia, HasTranslations;
-
-    protected $fillable = ['name', 'link'];
-    public $translatable = ['name'];
+    use HasFactory, SoftDeletes, LogsActivity, InteractsWithMedia;
+    protected $fillable = ['name', 'link', 'service_id', 'active'];
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection(Media_Collections::CLIENT)->singleFile();
+        $this->addMediaCollection(Media_Collections::PORTFOLIO)->singleFile();
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
     }
 }

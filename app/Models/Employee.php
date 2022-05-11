@@ -11,15 +11,18 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Translatable\HasTranslations;
 
-class Client extends Model implements HasMedia
+class Employee extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, LogsActivity, InteractsWithMedia, HasTranslations;
+    protected $fillable = ['name', 'position', 'social_media', 'active'];
+    public $translatable = ['position'];
 
-    protected $fillable = ['name', 'link'];
-    public $translatable = ['name'];
+    protected $casts = [
+        'social_media' => 'array'
+    ];
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection(Media_Collections::CLIENT)->singleFile();
+        $this->addMediaCollection(Media_Collections::EMPLOYEE)->singleFile();
     }
 }

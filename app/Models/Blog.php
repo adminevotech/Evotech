@@ -11,15 +11,16 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Translatable\HasTranslations;
 
-class Client extends Model implements HasMedia
+class Blog extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, LogsActivity, InteractsWithMedia, HasTranslations;
 
-    protected $fillable = ['name', 'link'];
-    public $translatable = ['name'];
+    protected $fillable = ['title', 'description', 'active'];
+    public $translatable = ['title', 'description'];
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection(Media_Collections::CLIENT)->singleFile();
+        $this->addMediaCollection(Media_Collections::BLOG_COVER)->singleFile();
+        $this->addMediaCollection(Media_Collections::BLOG_PHOTO)->singleFile();
     }
 }

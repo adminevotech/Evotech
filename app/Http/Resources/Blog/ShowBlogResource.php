@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Service;
+namespace App\Http\Resources\Blog;
 
 use App\Constants\Media_Collections;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ShowServiceResource extends JsonResource
+class ShowBlogResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,9 +19,8 @@ class ShowServiceResource extends JsonResource
             'id' => $this->id,
             'title' => $this->attributes('title')->data['title'],
             'description' => $this->attributes('description')->data['description'],
-            'short_description' => $this->attributes('short_description')->data['short_description'],
-            'cover' => $this->getFirstMediaUrl(Media_Collections::SERVICE_COVER),
-            'photo' => $this->getFirstMediaUrl(Media_Collections::SERVICE_PHOTO),
+            'cover' => $this->getFirstMediaUrl(Media_Collections::BLOG_COVER),
+            'photo' => $this->getFirstMediaUrl(Media_Collections::BLOG_PHOTO),
             'active' => $this->active,
             'created_at' => $this->created_at,
         ];

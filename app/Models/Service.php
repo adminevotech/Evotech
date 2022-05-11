@@ -14,13 +14,13 @@ use Spatie\Translatable\HasTranslations;
 class Service extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, LogsActivity, HasTranslations, InteractsWithMedia;
-    protected $fillable = ['title', 'points', 'active'];
-    public $translatable = ['title'];
-    protected $casts = ["points" => "array"];
+    protected $fillable = ['title', 'description', 'short_description', 'active'];
+    public $translatable = ['title', 'description', 'short_description'];
 
     //media
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection(Media_Collections::SERVICES)->singleFile();
+        $this->addMediaCollection(Media_Collections::SERVICE_COVER)->singleFile();
+        $this->addMediaCollection(Media_Collections::SERVICE_PHOTO)->singleFile();
     }
 }

@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Requests\Admin\Client;
+namespace App\Http\Requests\Admin\Portfolio;
 
 use App\Traits\ValidationTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * @bodyParam name object required the value of client name record Example: {"en": "English client name", "ar": "Arabic client name"}
- * @bodyParam link string required the link of client record Example: https://www.google.com/
+ * @bodyParam name string required the value of Portfolio name record Example: English Portfolio name
+ * @bodyParam link string required the value of Portfolio link record Example: https://www.google.com/
  * @bodyParam active boolean required the status of article category record
- * @bodyParam photo file required The image of the client. Maximum size is 5MB and allowed types are JPG, JPEG, PNG.
+ * @bodyParam photo file required The image of the Portfolio. Maximum size is 5MB and allowed types are JPG, JPEG, PNG.
+ * @bodyParam service_id integer required The image of the Portfolio.
 */
-class StoreClient extends FormRequest
+class StorePortfolio extends FormRequest
 {
     use ValidationTrait;
     /**
@@ -33,18 +34,10 @@ class StoreClient extends FormRequest
     {
         return [
             "name" => "required",
+            "service_id" => "required|exists:services,id",
             "link" => "required|url",
             'photo' => ["required", ...constant('valid_image')],
             "active" => ["required", "boolean"],
         ];
-    }
-
-    public function withValidator($validator)
-    {
-        $translatables = ['name'];
-
-        $validator->after(function ($validator) use ($translatables) {
-            validate_translatables($validator, $translatables);
-        });
     }
 }

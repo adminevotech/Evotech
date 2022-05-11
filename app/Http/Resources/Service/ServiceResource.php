@@ -18,8 +18,10 @@ class ServiceResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'points' => $this->points,
-            'photo' => $this->getFirstMediaUrl(Media_Collections::SERVICES),
+            'description' => $this->description,
+            'short_description' => $this->short_description,
+            'cover' => $this->getFirstMediaUrl(Media_Collections::SERVICE_COVER),
+            'photo' => $this->getFirstMediaUrl(Media_Collections::SERVICE_PHOTO),
             'active' => $this->active,
             'created_at' => $this->created_at,
         ];

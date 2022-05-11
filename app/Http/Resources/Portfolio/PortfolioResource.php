@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Client;
+namespace App\Http\Resources\Portfolio;
 
 use App\Constants\Media_Collections;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ClientResource extends JsonResource
+class PortfolioResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,11 +17,11 @@ class ClientResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'service_id' => $this->service_id,
             'name' => $this->name,
             'link' => $this->link,
-            'photo' => $this->getFirstMediaUrl(Media_Collections::CLIENT),
-            'active' => $this->active,
-            'created_at' => $this->created_at,
+            'photo' => $this->getFirstMediaUrl(Media_Collections::PORTFOLIO),
+            'active' => $this->active
         ];
     }
 }
