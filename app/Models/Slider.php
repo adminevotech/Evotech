@@ -9,12 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Translatable\HasTranslations;
 
 class Slider extends Model implements HasMedia
 {
-    use HasFactory, SoftDeletes, LogsActivity, InteractsWithMedia;
+    use HasFactory, SoftDeletes, LogsActivity, InteractsWithMedia, HasTranslations;
 
-    protected $fillable = ['group'];
+    protected $fillable = ['title', 'description', 'sub_title', "button"];
+    public $translatable = ['title', 'description', 'sub_title', "button"];
 
     public function registerMediaCollections(): void
     {

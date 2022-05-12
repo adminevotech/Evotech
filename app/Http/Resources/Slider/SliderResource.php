@@ -4,6 +4,7 @@ namespace App\Http\Resources\Slider;
 
 use App\Constants\Media_Collections;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 
 class SliderResource extends JsonResource
 {
@@ -17,8 +18,11 @@ class SliderResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'group' => $this->group,
-            'photo' => $this->getFirstMediaUrl("slider_".$this->group) ?? "https://shahpourpouyan.com/wp-content/uploads/2018/10/orionthemes-placeholder-image-1.png",
+            'title' => $this->title,
+            'description' => $this->description,
+            'button' => $this->button,
+            'sub_title' => $this->sub_title,
+            'photo' => $this->getFirstMediaUrl(Media_Collections::SLIDER),
         ];
     }
 }
