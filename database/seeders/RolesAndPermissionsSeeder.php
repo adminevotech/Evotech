@@ -26,6 +26,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'blogs',
             'employees',
             'portfolios',
+            'sliders',
             // ... // List all your Models you want to have Permissions for.
         ];
 
@@ -33,10 +34,14 @@ class RolesAndPermissionsSeeder extends Seeder
             'permissions',
             'activity_log',
             'static_content',
+            'page_headers',
+            'settings',
         ];
 
         $update_tables = [
             'static_content',
+            'page_headers',
+            'settings',
         ];
 
         $this->reset_tables();

@@ -14,4 +14,7 @@ final class Media_Collections
     const BLOG_COVER = 'blog_cover';
 
     const PORTFOLIO = 'portfolio';
+
+    const SLIDER = 'slider';
+    const PAGE_HEADER = 'page_header';
 }

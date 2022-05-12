@@ -5,8 +5,11 @@ use App\Http\Controllers\Api\Client\StaticContentController;
 use App\Http\Controllers\Api\Client\AuthController;
 use App\Http\Controllers\Api\Client\BlogController;
 use App\Http\Controllers\Api\Client\CommunicationController;
+use App\Http\Controllers\Api\Client\PageHeaderController;
 use App\Http\Controllers\Api\Client\PortfolioController;
 use App\Http\Controllers\Api\Client\ServiceController;
+use App\Http\Controllers\Api\Client\SettingController;
+use App\Http\Controllers\Api\Client\SliderController;
 use App\Http\Controllers\Api\Client\SubscriptionController;
 use App\Http\Controllers\Api\OTPController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +33,9 @@ Route::group([
         Route::resource('clients', ClientController::class)->only('index', 'show');
         Route::resource('blogs', BlogController::class)->only('index', 'show');
         Route::resource('portfolios', PortfolioController::class)->only('index', 'show');
+        Route::get('/sliders', [SliderController::class, 'index']);
+        Route::get('/pageHeaders', [PageHeaderController::class, 'index']);
+        Route::get('/settings', [SettingController::class, 'index']);
 
         Route::middleware('auth:api')->group(function(){
             Route::middleware('OTP')->group(function(){

@@ -4,12 +4,15 @@ use App\Http\Controllers\Api\Admin\ActivityLogController;
 use App\Http\Controllers\Api\Admin\AuthController;
 use App\Http\Controllers\Api\Admin\BlogController;
 use App\Http\Controllers\Api\Admin\ClientController;
+use App\Http\Controllers\Api\Admin\PageHeaderController;
 use App\Http\Controllers\Api\Admin\PermissionController;
 use App\Http\Controllers\Api\Admin\PortfolioController;
 use App\Http\Controllers\Api\Admin\StaticContentController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\Admin\RoleController;
 use App\Http\Controllers\Api\Admin\ServiceController;
+use App\Http\Controllers\Api\Admin\SettingController;
+use App\Http\Controllers\Api\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -38,6 +41,9 @@ Route::group([
                     "clients" => ClientController::class,
                     "blogs" => BlogController::class,
                     "portfolios" => PortfolioController::class,
+                    "sliders" => SliderController::class,
+                    "pageHeaders" => PageHeaderController::class,
+                    "settings" => SettingController::class,
                 ]);
             });
         });
