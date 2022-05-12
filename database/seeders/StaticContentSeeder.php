@@ -110,18 +110,18 @@ class StaticContentSeeder extends Seeder
                     "ar" => "teamsectiondescription"
                 ],
             ],
-            "cleantssection" =>[
-                "cleantssectiontitlesub" =>[
-                    "en" => "cleantssectiontitlesub",
-                    "ar" => "cleantssectiontitlesub"
+            "clientssection" =>[
+                "clientssectiontitlesub" =>[
+                    "en" => "clientssectiontitlesub",
+                    "ar" => "clientssectiontitlesub"
                 ],
-                "cleantssectiontitle" =>[
-                    "en" => "cleantssectiontitle",
-                    "ar" => "cleantssectiontitle"
+                "clientssectiontitle" =>[
+                    "en" => "clientssectiontitle",
+                    "ar" => "clientssectiontitle"
                 ],
-                "cleantssectiondescription" =>[
-                    "en" => "cleantssectiondescription",
-                    "ar" => "cleantssectiondescription"
+                "clientssectiondescription" =>[
+                    "en" => "clientssectiondescription",
+                    "ar" => "clientssectiondescription"
                 ],
             ],
             "footer" => [
@@ -156,6 +156,7 @@ class StaticContentSeeder extends Seeder
             ]
         ];
 
+        StaticContent::truncate();
         foreach ($staticContent as $group => $items) {
             foreach ($items as $key => $value) {
                 StaticContent::firstOrCreate(["key"=> $key], ["key"=> $key, "group" => $group, "text" => $value]);
