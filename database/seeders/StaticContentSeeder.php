@@ -156,7 +156,6 @@ class StaticContentSeeder extends Seeder
             ]
         ];
 
-        StaticContent::truncate();
         foreach ($staticContent as $group => $items) {
             foreach ($items as $key => $value) {
                 StaticContent::firstOrCreate(["key"=> $key], ["key"=> $key, "group" => $group, "text" => $value]);
