@@ -14,8 +14,8 @@ class StaticContentController extends Controller
     /**
      * Get Static Content
      *
-     * @queryParam group Filter by group [navbar,aboutsection,footer,servicessection,proposalsection,
-     * teamsection,clientsection]. Example: navbar
+     * @queryParam group Filter by group [navbar, aboutsection, footer, servicessection, proposalsection,
+     * teamsection, clientsection]. Example: navbar
      *
      */
     public function index(Request $request)
