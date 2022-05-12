@@ -20,6 +20,7 @@ class ServiceResource extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'short_description' => $this->short_description,
+            'sub_title' => $this->sub_title,
             'cover' => $this->getFirstMediaUrl(Media_Collections::SERVICE_COVER),
             'photo' => $this->getFirstMediaUrl(Media_Collections::SERVICE_PHOTO),
             'active' => $this->active,

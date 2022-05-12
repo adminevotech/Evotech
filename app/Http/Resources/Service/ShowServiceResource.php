@@ -20,6 +20,7 @@ class ShowServiceResource extends JsonResource
             'title' => $this->attributes('title')->data['title'],
             'description' => $this->attributes('description')->data['description'],
             'short_description' => $this->attributes('short_description')->data['short_description'],
+            'sub_title' => $this->attributes('sub_title')->data['sub_title'],
             'cover' => $this->getFirstMediaUrl(Media_Collections::SERVICE_COVER),
             'photo' => $this->getFirstMediaUrl(Media_Collections::SERVICE_PHOTO),
             'active' => $this->active,

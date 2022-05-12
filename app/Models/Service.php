@@ -14,8 +14,8 @@ use Spatie\Translatable\HasTranslations;
 class Service extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, LogsActivity, HasTranslations, InteractsWithMedia;
-    protected $fillable = ['title', 'description', 'short_description', 'active'];
-    public $translatable = ['title', 'description', 'short_description'];
+    protected $fillable = ['title', 'description', 'short_description', 'sub_title', 'active'];
+    public $translatable = ['title', 'description', 'short_description', 'sub_title'];
 
     //media
     public function registerMediaCollections(): void
