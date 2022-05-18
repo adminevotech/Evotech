@@ -14,7 +14,7 @@ class PageHeaderSeeder extends Seeder
      */
     public function run()
     {
-        $pageHeaderKeys = ["about_us", "news", "blogs", "contact_us", "partners", "management_board"];
+        $pageHeaderKeys = ["about_us", "services_1", "services_2", "services_3", "services_4", "services_5", "blogs", "contactus"];
 
         foreach ($pageHeaderKeys as $pageHeaderKey) {
             PageHeader::firstOrCreate(["key"=> $pageHeaderKey], ["key"=> $pageHeaderKey]);
