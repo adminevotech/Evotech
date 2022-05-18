@@ -15,21 +15,18 @@ class SettingSeeder extends Seeder
     public function run()
     {
         $settings = [
-            "footer" => [
-                "footerdesc" => "footerdesc",
-                "footermenu" => "footermenu",
-                "footernewsletters" => "footernewsletters",
-            ],
-            "home" => [
-                "aboutsection1text1" => "aboutsection1text1",
-                "aboutsection1text2" => "aboutsection1text2",
-            ]
+            "phone" =>  "xxxxxxxxxxxx",
+            "email" =>  "xxxxxxxxxxxx",
+            "facebook" =>  "xxxxxxxxxxxx",
+            "linkedin" =>  "xxxxxxxxxxxx",
+            "address" =>  "xxxxxxxxxxxx",
+            "twitter" =>  "xxxxxxxxxxxx",
+            "instagram" =>  "xxxxxxxxxxxx",
+            "youtube" =>  "xxxxxxxxxxxx",
         ];
-
-        foreach ($settings as $group => $items) {
-            foreach ($items as $key => $value) {
-                Setting::firstOrCreate(["key"=> $key], ["key"=> $key, "group" => $group, "value" => $value]);
-            }
+        
+        foreach ($settings as $key => $value) {
+            Setting::firstOrCreate(["key"=> $key], ["key"=> $key, "value" => $value]);
         }
     }
 }
